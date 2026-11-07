@@ -1,0 +1,210 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #0F172A;
+    color: #F8FAFC;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* ==================== ШАПКА ==================== */
+header {
+    background-color: #0F766E;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+    color: #FFFFFF;
+}
+
+/* ==================== ОСНОВНОЕ ==================== */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.form-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Фото справа и позади формы */
+.form-photo {
+    position: absolute;
+    top: 30px;
+    right: -20px;
+    width: 500px;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: 0.4s;
+    z-index: 1;
+}
+
+.form-container:hover .form-photo {
+    right: -250px;
+}
+
+/* ==================== ФОРМА ==================== */
+.registration-form {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 40px;
+    background-color: #132238;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.registration-form h2 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #5EEAD4;
+}
+
+.registration-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #F8FAFC;
+}
+
+.registration-form input[type="text"],
+.registration-form input[type="tel"],
+.registration-form input[type="email"],
+.registration-form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    background-color: #0F172A;
+    color: #F8FAFC;
+    border: 2px solid #1F455A;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.2s;
+}
+
+.registration-form input:focus {
+    outline: none;
+    border-color: #5EEAD4;
+}
+
+.gender-title {
+    margin-bottom: 10px;
+    color: #F8FAFC;
+}
+
+.gender {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.gender label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.gender input {
+    accent-color: #5EEAD4;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: #14B8A6;
+    color: #062B2A;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #5EEAD4;
+}
+
+/* ==================== ПОДВАЛ ==================== */
+footer {
+    padding: 20px 16px;
+    text-align: center;
+    background-color: #134E4A;
+    color: #F8FAFC;
+}
+
+/* ==================== АДАПТИВ ==================== */
+/* Фото уезжает слишком далеко — придержим его */
+@media (max-width: 1300px) {
+    .form-container:hover .form-photo {
+        right: -20px;
+    }
+}
+
+/* На планшетах фото мешает — прячем */
+@media (max-width: 1024px) {
+    .form-photo {
+        display: none;
+    }
+
+    .form-container {
+        max-width: 520px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 16px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    main {
+        padding: 24px 14px;
+        align-items: flex-start;
+    }
+
+    .registration-form {
+        padding: 24px 18px;
+        border-radius: 16px;
+    }
+
+    .registration-form h2 {
+        font-size: 20px;
+        margin-bottom: 22px;
+    }
+
+    .gender {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 24px;
+    }
+
+    button {
+        padding: 13px;
+    }
+}

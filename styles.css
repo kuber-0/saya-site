@@ -1,0 +1,754 @@
+/* ==================== ОБЩИЕ НАСТРОЙКИ ==================== */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: #0F172A;
+    color: #F8FAFC;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* ==================== ШАПКА ==================== */
+header {
+    position: relative;
+    z-index: 120;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0F766E;
+    padding: 18px 20px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+header nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: normal;
+    transition: 0.2s;
+}
+
+header nav a:hover {
+    color: #99F6E4;
+    font-weight: bold;
+}
+
+/* Бургер — по умолчанию скрыт */
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 42px;
+    height: 42px;
+    padding: 8px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.burger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #FFFFFF;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.burger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger.active span:nth-child(2) { opacity: 0; }
+.burger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.registration-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #14B8A6;
+    color: #062B2A;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    white-space: nowrap;
+    transition: 0.2s;
+}
+
+.registration-button:hover {
+    background-color: #5EEAD4;
+}
+
+/* ==================== ФОТО + ТЕКСТ ==================== */
+.info {
+    display: flex;
+    width: 100%;
+}
+
+.foto-my,
+.Opicania-my {
+    width: 50%;
+}
+
+.foto-my img {
+    display: block;
+    width: 100%;
+    height: 650px;
+    object-fit: cover;
+}
+
+.Opicania-my {
+    padding: 40px;
+    background: #132238;
+    color: #F8FAFC;
+}
+
+.Opicania-my h2 {
+    margin-top: 0;
+    font-size: 36px;
+    font-weight: 700;
+    color: #5EEAD4;
+}
+
+.Opicania-my p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #C7D2FE;
+}
+
+/* ==================== СЕКЦИИ ==================== */
+section {
+    padding: 40px;
+    background-color: #17344A;
+    text-align: center;
+}
+
+section h2,
+section h3 {
+    color: #5EEAD4;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.facts-hobbies {
+    display: flex;
+    width: 100%;
+    padding: 0;
+}
+
+.facts,
+.hobbies {
+    width: 50%;
+    min-height: 250px;
+    padding: 25px 40px;
+}
+
+.hobbies ul,
+.facts ol {
+    display: inline-block;
+    text-align: left;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.facts li p,
+.hobbies li p {
+    margin: 5px 0 15px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #C7D2FE;
+}
+
+.facts li strong,
+.hobbies li strong {
+    color: #F8FAFC;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.facts li,
+.hobbies li {
+    transition: 0.3s;
+}
+
+.facts li:hover strong,
+.hobbies li:hover strong {
+    color: #5EEAD4;
+}
+
+.facts li:hover,
+.hobbies li:hover {
+    transform: translateX(8px);
+}
+
+/* ==================== КАРТОЧКИ ==================== */
+.cards-section {
+    padding: 60px 8%;
+    background-color: #0F172A;
+}
+
+.cards-section > h2 {
+    margin-bottom: 50px;
+    text-align: center;
+    color: #5EEAD4;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.card {
+    display: flex;
+    width: 75%;
+    min-height: 280px;
+    background-color: #132238;
+    border: 2px solid #1F455A;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transition: 0.3s;
+}
+
+.card-right { align-self: flex-start; }
+.card-left  { align-self: flex-end; }
+
+.card-image {
+    width: 45%;
+    min-height: 280px;
+}
+
+.card-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.85);
+    transition: 0.3s;
+}
+
+.card-content {
+    width: 55%;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-content h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #5EEAD4;
+    font-weight: 700;
+}
+
+.card-content p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #C7D2FE;
+    font-weight: 400;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px rgba(94, 234, 212, 0.35);
+    border-color: #5EEAD4;
+}
+
+.card:hover .card-image img {
+    filter: brightness(1);
+    transform: scale(1.05);
+}
+
+/* ==================== ПОДВАЛ ==================== */
+footer {
+    text-align: center;
+    padding: 30px 16px;
+    background-color: #134E4A;
+    color: #F8FAFC;
+    font-size: 18px;
+}
+
+.heart {
+    display: inline-block;
+    animation: heart 2s infinite;
+}
+
+.secret {
+    display: inline-block;
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #5EEAD4;
+    transition: max-width 0.5s, opacity 0.5s;
+}
+
+footer p:hover .secret {
+    max-width: 110px;
+    opacity: 1;
+}
+
+@keyframes heart {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.5; }
+}
+
+/* ==================== КНОПКА «НАВЕРХ» ==================== */
+.home-button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 150;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #14B8A6;
+    color: #062B2A;
+    text-decoration: none;
+    border-radius: 50%;
+    font-size: 22px;
+    transition: 0.2s;
+}
+
+.home-button:hover {
+    transform: scale(1.1);
+    background-color: #5EEAD4;
+}
+
+/* ==================== МУЗЫКАЛЬНЫЙ ПЛЕЕР ==================== */
+.music-player {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 200;
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.player-toggle {
+    flex: 0 0 auto;
+    width: 54px;
+    height: 54px;
+    border: none;
+    border-radius: 50%;
+    background-color: #14B8A6;
+    color: #062B2A;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    transition: 0.2s;
+}
+
+.player-toggle:hover {
+    background-color: #5EEAD4;
+    transform: scale(1.08);
+}
+
+.music-player.playing .player-toggle {
+    animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(94, 234, 212, 0.55); }
+    50%      { box-shadow: 0 0 0 12px rgba(94, 234, 212, 0); }
+}
+
+.player-body {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 320px;
+    padding: 16px;
+    background-color: rgba(19, 34, 56, 0.96);
+    backdrop-filter: blur(6px);
+    border: 2px solid #1F455A;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+.music-player.open .player-body {
+    display: flex;
+    animation: playerIn 0.3s ease;
+}
+
+@keyframes playerIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.player-title {
+    font-size: 14px;
+    color: #5EEAD4;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* --- Кнопки плеера: 5 в ряд --- */
+.player-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+}
+
+.player-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: 2px solid #1F455A;
+    border-radius: 50%;
+    background: #0F172A;
+    color: #F8FAFC;
+    font-size: 15px;
+    line-height: 1;
+    cursor: pointer;
+    transition: 0.2s;
+    font-family: inherit;
+}
+
+.player-btn:hover {
+    border-color: #5EEAD4;
+    color: #5EEAD4;
+}
+
+/* центральная кнопка играть/пауза */
+.player-btn.play {
+    width: 44px;
+    height: 44px;
+    border: none;
+    background: #14B8A6;
+    color: #062B2A;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.player-btn.play:hover {
+    background: #5EEAD4;
+    color: #062B2A;
+}
+
+/* повтор активен */
+.player-btn.active {
+    border-color: #5EEAD4;
+    color: #5EEAD4;
+    box-shadow: 0 0 10px rgba(94, 234, 212, 0.4);
+}
+
+/* режим «повтор одного трека» */
+.player-btn.active.one {
+    background: rgba(94, 234, 212, 0.15);
+}
+
+/* избранное */
+.player-btn.like {
+    font-size: 18px;
+}
+
+.player-btn.like.liked {
+    color: #ff6b8a;
+    border-color: #ff6b8a;
+    box-shadow: 0 0 10px rgba(255, 107, 138, 0.5);
+}
+
+.player-btn.like.liked:hover {
+    color: #ff8fa3;
+}
+
+/* --- Прогресс и громкость --- */
+.player-progress {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    color: #C7D2FE;
+}
+
+.player-progress input[type="range"] {
+    flex: 1;
+}
+
+.player-volume {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+
+.player-volume input[type="range"] {
+    flex: 1;
+}
+
+/* Ползунки */
+.music-player input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 4px;
+    border-radius: 4px;
+    background: #1F455A;
+    outline: none;
+    cursor: pointer;
+}
+
+.music-player input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #5EEAD4;
+    cursor: pointer;
+}
+
+.music-player input[type="range"]::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border: none;
+    border-radius: 50%;
+    background: #5EEAD4;
+    cursor: pointer;
+}
+
+/* ==================== ПЛАНШЕТ ==================== */
+@media (max-width: 900px) {
+    .info {
+        flex-direction: column;
+    }
+
+    .foto-my,
+    .Opicania-my {
+        width: 100%;
+    }
+
+    .foto-my img {
+        height: 420px;
+    }
+
+    .Opicania-my {
+        padding: 30px 24px;
+    }
+
+    .facts-hobbies {
+        flex-direction: column;
+    }
+
+    .facts,
+    .hobbies {
+        width: 100%;
+        padding: 25px 24px;
+    }
+
+    .cards-section {
+        padding: 45px 5%;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+
+/* ==================== МОБИЛЬНОЕ МЕНЮ ==================== */
+@media (max-width: 860px) {
+    header {
+        justify-content: flex-end;
+        padding: 12px 16px;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 150;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background-color: #0F766E;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    .nav-menu.open {
+        max-height: 420px;
+    }
+
+    .nav-menu nav {
+        width: 100%;
+    }
+
+    .nav-menu nav a {
+        display: block;
+        padding: 14px 20px;
+        text-align: center;
+        font-size: 17px;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .nav-menu .registration-button {
+        margin: 14px 20px;
+        text-align: center;
+    }
+}
+
+/* ==================== ТЕЛЕФОН ==================== */
+@media (max-width: 700px) {
+    .foto-my img {
+        height: 300px;
+    }
+
+    .Opicania-my h2 {
+        font-size: 26px;
+    }
+
+    .Opicania-my p {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 30px 16px;
+    }
+
+    section h2 {
+        font-size: 24px;
+    }
+
+    .cards-section {
+        padding: 35px 16px;
+    }
+
+    .cards-section > h2 {
+        margin-bottom: 30px;
+    }
+
+    .card,
+    .card-left {
+        flex-direction: column;
+        min-height: auto;
+        border-radius: 18px;
+    }
+
+    /* у «левых» карточек картинка в HTML идёт второй —
+       column-reverse поднимает её наверх */
+    .card-left {
+        flex-direction: column-reverse;
+    }
+
+    .card-image,
+    .card-content {
+        width: 100%;
+    }
+
+    .card-image {
+        min-height: 220px;
+    }
+
+    .card-image img {
+        height: 220px;
+    }
+
+    .card-content {
+        padding: 22px;
+    }
+
+    .card-content h3 {
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+
+    footer {
+        font-size: 16px;
+    }
+}
+
+/* ==================== ПЛЕЕР НА ТЕЛЕФОНЕ ==================== */
+@media (max-width: 768px) {
+    .music-player {
+        left: 10px;
+        bottom: 10px;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .player-body {
+        width: calc(100vw - 110px);
+        max-width: 320px;
+        padding: 12px;
+    }
+
+    .player-toggle {
+        width: 46px;
+        height: 46px;
+        font-size: 18px;
+    }
+
+    .player-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 13px;
+    }
+
+    .player-btn.play {
+        width: 40px;
+        height: 40px;
+        font-size: 15px;
+    }
+
+    .player-btn.like {
+        font-size: 16px;
+    }
+
+    .home-button {
+        width: 44px;
+        height: 44px;
+        right: 16px;
+        bottom: 16px;
+        font-size: 18px;
+    }
+}
+
+/* Отключаем «залипание» ховеров на тач-устройствах */
+@media (hover: none) {
+    .card:hover,
+    .facts li:hover,
+    .hobbies li:hover,
+    .home-button:hover,
+    .player-toggle:hover {
+        transform: none;
+    }
+}
